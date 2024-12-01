@@ -11,12 +11,21 @@ import GTLogo from './assets/GTLogo.jpeg'
 import amazonLogo from './assets/Amazon-Logo-07.jpg'
 import microsoftLogo from './assets/microsoftLogo.png'
 
+import pythonLogo from './assets/pythonlogo.png'
+import spacyLogo from './assets/SpacyLogo.png'
+import firebase from './assets/firebaeLogo.png'
+import flaskLogo from './assets/flask_logo.jpg'
+import gephiLogo from './assets/gephiLogo.jpg'
+import reactLogo from './assets/reactLogo.png'
+
+
 import QueenMaryUniversityLogo from './assets/Queen-Mary-UniversityLogo.png'
-import ClimateSenseHomepagePhoneOne from './assets/ClimateSenseHomepagePhoneOne.jpg'
+import ClimateSenseHomepagePhoneOne from './assets/ClimateSensePhone.png'
 //import ClimateSenseHomepageTablet from '../../assets/ClimateSenseHomepageTablet.jpg'
 //import ClimateSenseLoginScreen from '../../assets/ClimateSenseLoginScreen.jpg'
-import FDMWellbeingHomepageOne from'./assets/FDMWellbeingHomepageOne.jpg'
+import FDMWellbeingHomepageOne from'./assets/FDMWellbeingPhone.png'
 //import FDMWellbeingHomepageTwo from'../../assets/FDMWellbeingHomepageTwo.jpg'
+import Spotify from './assets/SpotifyAnalysis.png'
 
 import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
@@ -77,13 +86,28 @@ const Main = () => {
         {
             Title: 'Climate Sense',
             image: ClimateSenseHomepagePhoneOne,
-            github_link: ''
+            github_link: '',
+            description: 'The Climate Sense project aimed to develop a React Native mobile application that raises climate change awareness and fosters eco-friendly behaviors through engaging and educational features. Guided by principles of user-centric design and gamification, the app combines multiple functionalities to encourage user retention and action.',
+            technologiesLogo: [pythonLogo,spacyLogo,firebase, flaskLogo,reactLogo],
+            decription_list: ['Server and NLP: Python Flask server utilized spaCy for NLP preprocessing and TF-IDF for term extraction, ensuring climate-relevant content in the game.', 'APIs and Libraries: Integrated APIs for news content, Firebase for real-time data synchronization, and Flask-SocketIO for multiplayer functionality.',' Development Environment: Built using React Native Expo for cross-platform compatibility (Android and iOS), with Firebase providing backend services for user authentication and data storage.']
         },
 
         {
             Title: 'FDM WellbeingApp',
             image: FDMWellbeingHomepageOne,
-            github_link: ''
+            github_link: '',
+            description: 'The FDM Wellbeing App was a cross-platform mobile application developed using React Native and Firebase to enhance employee well-being and mental health. The app offered a seamless and user-friendly interface to engage users while securely managing their data.',
+            technologiesLogo: [],
+            decription_list: ['Well-being Focus: Designed to support mental health initiatives, offering tools and features aimed at improving employee wellness.','Firebase Integration: Facilitated secure data storage and real-time synchronization for user information and app interactions.','React Native Framework: Enabled the development of a robust and responsive app compatible with both iOS and Android platforms.']
+        },
+
+        {
+            Title: 'Spotify Music Reccomendation Analysis',
+            image: Spotify,
+            github_link: '',
+            description: 'The Spotify Playlist Dynamics project investigated the underlying mechanisms of Spotify’s playlist recommendation system, focusing on uncovering patterns in song co-occurrence and attribute relationships. The study applied network analysis techniques to explore how music attributes influence recommendation algorithms, with an emphasis on promoting transparency and improving user trust.',
+            technologiesLogo: [],
+            decription_list: ['Louvain Community Detection: Partitioned the network into clusters of similar songs based on their connectivity.', 'Gephi Visualizations: Compared small and large network properties to understand community structures.', 'Analyzed attribute distributions across communities to determine their impact on playlist dynamics.']
         },
 
     ]
@@ -98,11 +122,9 @@ const Main = () => {
                 <h4 className='text-xl font-light text-stone-900 mt-48' >Hi, I'm</h4>
                 <h1 className='text-6xl font-bold'> Dare Mensah </h1>
                 <h1 className='text-6xl font-bold text-stone-900'>Product Manager/ Software Developer</h1>
-                <p className='mt-10'> Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit enim inventore
-                    incidunt cupiditate ducimus aut ullam, veritatis ex doloremque fuga? Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                    Reiciendis accusantium sint aut perspiciatis accusamus. Hic ea harum voluptatibus commodi minus maxime at.
+                <p className='my-4'> A passionate and dedicated Computer Science graduate with First Class Honors from Queen Mary University of London. With hands-on experience in software development, data analytics, and cloud solutions, I specialize in leveraging technologies like React, Python, Firebase, and SQL to create impactful solutions. Currently, I am advancing my expertise as a Technology Consultant Associate at Grant Thornton, where I contribute to delivering cutting-edge technology solutions.
                 </p>
-                <div class="flex flex-nowrap my-5 gap-4 justify-center">
+                <div class="flex flex-nowrap my-5 gap-4 justify-start">
                     <div>
                         <a href="https://drive.google.com/uc?export=download&id=1VS2lJSuqRcQFO7LDeIljtOf8jCjygMTz">
                             <button className='bg-stone-600 hover:bg-stone-800 text-white font-bold py-2 px-4 rounded-full'>
@@ -156,15 +178,6 @@ const Main = () => {
             </div>
             
         </div>
-        <div>
-            <p className="max-w-full text-center">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit enim
-                inventore incidunt cupiditate ducimus aut ullam, veritatis ex
-                doloremque fuga? Lorem ipsum dolor sit, amet consectetur adipisicing
-                elit. Reiciendis accusantium sint aut perspiciatis accusamus. Hic ea
-                harum voluptatibus commodi minus maxime at.
-            </p>
-        </div>
         </div>
     </section>
 
@@ -193,37 +206,54 @@ const Main = () => {
                 </div>
             ))}
         </div>
-        <div>
-            <p className="max-w-full text-center">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit enim
-                inventore incidunt cupiditate ducimus aut ullam, veritatis ex
-                doloremque fuga? Lorem ipsum dolor sit, amet consectetur adipisicing
-                elit. Reiciendis accusantium sint aut perspiciatis accusamus. Hic ea
-                harum voluptatibus commodi minus maxime at.
-            </p>
-        </div>
         </div>
     </section>
 
     <section id="projects" className="my-60">
-        <p className="text-stone-900 text-center">Browse My Recent</p>
-        <h1 className="text-6xl font-bold text-center mb-10">Projects</h1>
-        <div className="container flex flex-col items-center justify-center gap-11 mx-auto  bg-white w-full">
+    <p className="text-stone-900 text-center">Browse My Recent</p>
+    <h1 className="text-6xl font-bold text-center mb-10">Projects</h1>
+    <div className="container flex flex-col items-center justify-center gap-11 mx-auto bg-white w-full">
         <Carousel swipeable={true} showIndicators={true} showThumbs={false} showArrows={true}>
-        {Projects.map((Projects, index) => (
-            <div key ={index} className="flex flex-wrap justify-center gap-3"> 
-                <div className="border-2 rounded-3xl p-3 w-96 h-70 justify-items-center">
-                    <img className='rounded-3xl items-center' src= {Projects.image} height={200} width={200}/>
-                    <div>
-                        <h2 className='text-3xl font-bold text-center my-4'>{Projects.Title}</h2>
+            {Projects.map((Projects, index) => (
+                <div key={index} className="container grid md:grid-cols-2 bg-white w-full gap-6">
+                    {/* Column for Image */}
+                    <div className="flex justify-center items-center">
+                        <img
+                            className="rounded-3xl"
+                            src={Projects.image}
+                            height={200}
+                            width={200}
+                            alt={`${Projects.Title} image`}
+                        />
+                    </div>
+
+                    {/* Column for Text */}
+                    <div className="flex flex-col justify-center">
+                        <h2 className="text-3xl font-bold my-4 text-center">{Projects.Title}</h2>
+                        <p className='text-start'>{Projects.description}</p>
+                        <div>
+                        {Projects.decription_list.map((text, textIndex) => (
+                            <div key={textIndex}>
+                                <ol className=' list-disc pl-5'>
+                                    <li className='mt-4 text-start'>{text}</li>
+                                </ol>
+                            </div>
+                        ))}
+                    </div>
+                    {/*<div>
+                    {Projects.technologiesLogo.map((image, imgIndex) => (
+                            <div key={imgIndex} className='flex flex-nowrap my-5 gap-4 justify-center'>
+                                <img className='rounded-full' src={image} height={10} width={10}/>
+                            </div>
+                        ))}
+
+                    </div>*/}
                     </div>
                 </div>
-            </div>
-            
-        ))}
+            ))}
         </Carousel>
-        </div>
-    </section>
+    </div>
+</section>
 
 
     </div>
