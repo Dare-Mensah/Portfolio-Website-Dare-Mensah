@@ -10,6 +10,7 @@ import githubimg from "./assets/github.jpg"
 import GTLogo from './assets/GTLogo.jpeg'
 import amazonLogo from './assets/Amazon-Logo-07.jpg'
 import microsoftLogo from './assets/microsoftLogo.png'
+import reality_ai_labs_logo from './assets/reality_ai_labs_logo.jpg'
 
 import pythonLogo from './assets/pythonlogo.png'
 import spacyLogo from './assets/SpacyLogo.png'
@@ -17,6 +18,7 @@ import firebase from './assets/firebaeLogo.png'
 import flaskLogo from './assets/flask_logo.jpg'
 import gephiLogo from './assets/gephiLogo.jpg'
 import reactLogo from './assets/reactLogo.png'
+
 
 
 import QueenMaryUniversityLogo from './assets/Queen-Mary-UniversityLogo.png'
@@ -33,6 +35,14 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 const Main = () => {
     const Work_Experiences = [
+        {
+            company: 'Reality AI Labs',
+            job_title: 'Software Developer',
+            description: ['Reduced system bugs by 4% through thorough testing and debugging for high-quality code.', 'Created AI-powered tools (Marvel AI, Sky AI) to enhance global education and career coaching accessibility by 5%.' ],
+            logo: reality_ai_labs_logo,
+            duration: 'Dec 2024 - Present'
+        },
+
         {
             company: 'Grant Thornton',
             job_title: 'Technology Risk Consultant',
@@ -88,7 +98,7 @@ const Main = () => {
             image: ClimateSenseHomepagePhoneOne,
             github_link: '',
             description: 'The Climate Sense project aimed to develop a React Native mobile application that raises climate change awareness and fosters eco-friendly behaviors through engaging and educational features. Guided by principles of user-centric design and gamification, the app combines multiple functionalities to encourage user retention and action.',
-            technologiesLogo: [pythonLogo,spacyLogo,firebase, flaskLogo,reactLogo],
+            technologiesLogo: [pythonLogo,firebase,reactLogo],
             decription_list: ['Server and NLP: Python Flask server utilized spaCy for NLP preprocessing and TF-IDF for term extraction, ensuring climate-relevant content in the game.', 'APIs and Libraries: Integrated APIs for news content, Firebase for real-time data synchronization, and Flask-SocketIO for multiplayer functionality.',' Development Environment: Built using React Native Expo for cross-platform compatibility (Android and iOS), with Firebase providing backend services for user authentication and data storage.']
         },
 
@@ -97,7 +107,7 @@ const Main = () => {
             image: FDMWellbeingHomepageOne,
             github_link: '',
             description: 'The FDM Wellbeing App was a cross-platform mobile application developed using React Native and Firebase to enhance employee well-being and mental health. The app offered a seamless and user-friendly interface to engage users while securely managing their data.',
-            technologiesLogo: [],
+            technologiesLogo: [firebase,reactLogo],
             decription_list: ['Well-being Focus: Designed to support mental health initiatives, offering tools and features aimed at improving employee wellness.','Firebase Integration: Facilitated secure data storage and real-time synchronization for user information and app interactions.','React Native Framework: Enabled the development of a robust and responsive app compatible with both iOS and Android platforms.']
         },
 
@@ -106,7 +116,7 @@ const Main = () => {
             image: Spotify,
             github_link: '',
             description: 'The Spotify Playlist Dynamics project investigated the underlying mechanisms of Spotify’s playlist recommendation system, focusing on uncovering patterns in song co-occurrence and attribute relationships. The study applied network analysis techniques to explore how music attributes influence recommendation algorithms, with an emphasis on promoting transparency and improving user trust.',
-            technologiesLogo: [],
+            technologiesLogo: [pythonLogo,gephiLogo],
             decription_list: ['Louvain Community Detection: Partitioned the network into clusters of similar songs based on their connectivity.', 'Gephi Visualizations: Compared small and large network properties to understand community structures.', 'Analyzed attribute distributions across communities to determine their impact on playlist dynamics.']
         },
 
@@ -240,14 +250,14 @@ const Main = () => {
                             </div>
                         ))}
                     </div>
-                    {/*<div>
+                    <div className='flex flex-nowrap my-5 gap-4 justify-center'>
                     {Projects.technologiesLogo.map((image, imgIndex) => (
                             <div key={imgIndex} className='flex flex-nowrap my-5 gap-4 justify-center'>
-                                <img className='rounded-full' src={image} height={10} width={10}/>
+                                <img className='rounded-md' src={image} height={15} width={15}/>
                             </div>
                         ))}
 
-                    </div>*/}
+                    </div>
                     </div>
                 </div>
             ))}
