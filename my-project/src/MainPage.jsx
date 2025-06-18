@@ -1,12 +1,13 @@
 import React from 'react'
+import { useState } from 'react';
 //import Slider from "react-slick";
 
 //import "slick-carousel/slick/slick.css";
 //import "slick-carousel/slick/slick-theme.css";
 
 import Heroimg from "./assets/Profilepic.jpg"
-import linkinimg from "./assets/linkedinlogo.png"
-import githubimg from "./assets/github.jpg"
+import linkinimg from "./assets/linkedin.png"
+import githubimg from "./assets/github.png"
 import GTLogo from './assets/GTLogo.jpeg'
 import amazonLogo from './assets/Amazon-Logo-07.jpg'
 import microsoftLogo from './assets/microsoftLogo.png'
@@ -18,6 +19,7 @@ import firebase from './assets/firebaeLogo.png'
 import flaskLogo from './assets/flask_logo.jpg'
 import gephiLogo from './assets/gephiLogo.jpg'
 import reactLogo from './assets/reactLogo.png'
+import terminalLogo from './assets/programming.png'
 
 
 
@@ -29,12 +31,27 @@ import FDMWellbeingHomepageOne from'./assets/FDMWellbeingPhone.png'
 //import FDMWellbeingHomepageTwo from'../../assets/FDMWellbeingHomepageTwo.jpg'
 import Spotify from './assets/SpotifyAnalysis.png'
 
+import {useMediaQuery} from 'react-responsive';
+
 import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 //import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Main = () => {
+
+    // Media query for responsive design
+    const isMobile = useMediaQuery({ query: '(max-width: 499px)' });
+    const isTablet = useMediaQuery({ query: '(min-width: 500px) and (max-width: 820px)' });
+    const isDesktop = useMediaQuery({ query: '(min-width: 1024px)' });
+
     const Work_Experiences = [
+        {
+            company: 'Amazon',
+            job_title: 'Data Analyst',
+            description: ['Managed weekly country-level volume planning for multiple European regions, ensuring alignment across Customer Fulfilment, Surface Transportation, and Global Transportation Services. ', 'Developed and maintained complex data queries, visualizations, and models for reporting and ad-hoc analysis using Excel, Quick Sight, ETL Jobs, AWS (S3 buckets, Redshift), and SQL. ' ],
+            logo: reality_ai_labs_logo,
+            duration: 'Feb 2025 - Present'
+        },
         {
             company: 'Reality AI Labs',
             job_title: 'Software Developer',
@@ -121,149 +138,153 @@ const Main = () => {
         },
 
     ]
-
+    
 
   return (
-    <div>
-    <section id='profile'>
-    <div className='justify-items-center' >
-        <div className='container grid md:grid-cols-2 gap-11 mx-10 min-h-[500px] bg-white w-full'>
-            <div className='flex flex-col justify-center text-center md:text-left pt-24 md:p-0 pb-5 bg-white w-full'>
-                <h4 className='text-xl font-light text-stone-900 mt-48' >Hi, I'm</h4>
-                <h1 className='text-6xl font-bold'> Dare Mensah </h1>
-                <h1 className='text-6xl font-bold text-stone-900'>Product Manager/ Software Developer</h1>
-                <p className='my-4'> A passionate and dedicated Computer Science graduate with First Class Honors from Queen Mary University of London. With hands-on experience in software development, data analytics, and cloud solutions, I specialize in leveraging technologies like React, Python, Firebase, and SQL to create impactful solutions. Currently, I am advancing my expertise as a Technology Consultant Associate at Grant Thornton, where I contribute to delivering cutting-edge technology solutions.
-                </p>
-                <div class="flex flex-nowrap my-5 gap-4 justify-start">
-                    <div>
-                        <a href="https://drive.google.com/uc?export=download&id=1VS2lJSuqRcQFO7LDeIljtOf8jCjygMTz">
-                            <button className='bg-stone-600 hover:bg-stone-800 text-white font-bold py-2 px-4 rounded-full'>
-                                <p>Downlaod CV</p>
-                            </button>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="https://www.linkedin.com/in/dare-mensah-a78934226/">
-                            <button>
-                                <img className ='rounded-full src' src={linkinimg} height={42} width={42}/>
-                            </button>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="https://github.com/Dare-Mensah">
-                            <button>
-                                <img className ='rounded-full src' src={githubimg} height={42} width={42}/>
-                            </button>
-                        </a>
-                    </div>
-            </div>    
-            </div>
-            <div className='mt-48 mx-7'>
-                <img className='rounded-md' src={Heroimg} alt= ""/>
-            </div>
-        </div>
+    <div className='bg-neutral-900 text-white'>
 
-    </div>
-    </section>
+        <section id='profile' className="w-full py-40 bg-neutral-900 text-white">
+            <div className="container mx-auto px-8 items-center justify-between gap-1">
+                
+                {/* Left Text Content */}
+                <div className="flex flex-col items-start text-left max-w-screen-lg space-h-2 mt-10">
+                    {isMobile ? (<h4 className="text-xl font-medium text-white mb-2">Software Developer</h4>) : (<h4 className="text-3xl font-medium text-white mb-2">Software Developer</h4>)}
+                    {isMobile ? (<h1 className="text-5xl font-bold text-white mb-6">Dare Mensah</h1>) : (<h1 className="text-8xl font-bold text-white mb-6">Dare Mensah</h1>)}
 
-    <section id="about" className="my-60">
-        <p className="text-stone-900 text-center">Get To Know Me</p>
-        <h1 className="text-6xl font-bold text-center mb-12">About Me</h1>
-        <div className="container flex flex-col items-center justify-center gap-11 mx-auto  bg-white w-full">
-            <div className="flex flex-wrap justify-center gap-4">
-                <div className="border-2 rounded-md p-3 w-96 h-70">
-                <p className="text-center font-bold mb-3">Experience</p>
-                <p className="text-center">1+ years</p>
-                <p className="text-center mt-2">Software Development & Product Management</p>
-            </div>
-            <div className="border-2 rounded-md p-3 w-96 h-70">
-                <p className="text-center font-bold mb-3">Education</p>
-                <p className="text-center">BSc Honours Computer Science: 1st Class</p>
-                <p className="text-center">A Level: Computer Science - A*, Politics - A, Philosophy - A</p>
-            </div>
-            <div className="border-2 rounded-md p-3 w-96 h-70">
-                <p className="text-center font-bold mb-3">Skills</p>
-                <p className="text-center">Java, Python, React, SQL, APIs</p>
-                <p className="text-center">HTML, CSS, JavaScript, PySpark</p>
-            </div>
-            
-        </div>
-        </div>
-    </section>
+                    {(isMobile) ? (<p className="text-white mb-6 leading-relaxed font-extralight text-center text-sm">
+                        A passionate Computer Science graduate with First Class Honors from Queen Mary University of London. 
+                        With hands-on experience in software development, data analytics, and cloud solutions, 
+                        I specialize in leveraging technologies like React, Python, Firebase, and SQL to create impactful solutions. 
+                        Currently, I am advancing my expertise as a Data Analyst at Amazon, where I contribute to delivering cutting-edge technology solutions.
+                    </p>) : ( <p className="text-white mb-6 leading-relaxed font-extralight">
+                        A passionate Computer Science graduate with First Class Honors from Queen Mary University of London. 
+                        With hands-on experience in software development, data analytics, and cloud solutions, 
+                        I specialize in leveraging technologies like React, Python, Firebase, and SQL to create impactful solutions. 
+                        Currently, I am advancing my expertise as a Data Analyst at Amazon, where I contribute to delivering cutting-edge technology solutions.
+                    </p>)}
 
-    <section id="work_experience" className="my-60">
-        <p className="text-stone-900 text-center">Explore my</p>
-        <h1 className="text-6xl font-bold text-center mb-10">Work Experience</h1>
-        <div className="container flex flex-col items-center justify-center gap-11 mx-auto bg-white w-full">
-            <div className="flex flex-wrap justify-center gap-3">
-            {Work_Experiences.map((Work_Experiences, index) => (
-                <div className="border-2 rounded-3xl p-3 w-96 h-70">
-                    <p className="text-center font-bold mb-3">{Work_Experiences.job_title}</p>
-                    <div className='flex space-x-3 grid-rows-2  justify-center'>
-                        <img src={Work_Experiences.logo} height={40} width={40}/>
-                        <p className="text-center mt-2">{Work_Experiences.company}</p>
-                    </div>
-                        <p className='text-center font-thin mt-3 text-neutral-800 antialiased'>{Work_Experiences.duration}</p>
-                    <div>
-                    {Work_Experiences.description.map((text, textIndex) => (
-                        <div key={textIndex}>
-                            <ol className=' list-disc pl-5'>
-                                <li className='mt-4'>{text}</li>
-                            </ol>
-                        </div>
-                    ))}
+                    
+                    <div className="flex flex-wrap items-center gap-4">
+                        <a 
+                            href="https://drive.google.com/uc?export=download&id=1VS2lJSuqRcQFO7LDeIljtOf8jCjygMTz" className="bg-neutral-900 border border-gray-300 px-4 py-2 text-white font-light hover:bg-stone-800"
+                            > Download CV
+                        </a>
+
+                        <a 
+                            href="https://www.linkedin.com/in/dare-mensah-a78934226/">
+                            <img src={linkinimg} alt="LinkedIn" className="h-10 w-10" />
+                        </a>
+
+                        <a 
+                            href="https://github.com/Dare-Mensah">
+                            <img src={githubimg} alt="GitHub" className="h-10 w-10" />
+                        </a>
                     </div>
                 </div>
-            ))}
-        </div>
-        </div>
-    </section>
 
-    <section id="projects" className="my-60">
-    <p className="text-stone-900 text-center">Browse My Recent</p>
-    <h1 className="text-6xl font-bold text-center mb-10">Projects</h1>
-    <div className="container flex flex-col items-center justify-center gap-11 mx-auto bg-white w-full">
-        <Carousel swipeable={true} showIndicators={true} showThumbs={false} showArrows={true}>
-            {Projects.map((Projects, index) => (
-                <div key={index} className="container grid md:grid-cols-2 bg-white w-full gap-6">
-                    {/* Column for Image */}
-                    <div className="flex justify-center items-center">
-                        <img
-                            className="rounded-3xl"
-                            src={Projects.image}
-                            height={200}
-                            width={200}
-                            alt={`${Projects.Title} image`}
-                        />
-                    </div>
+                
+            </div>
+        </section>
 
-                    {/* Column for Text */}
-                    <div className="flex flex-col justify-center">
-                        <h2 className="text-3xl font-bold my-4 text-center">{Projects.Title}</h2>
-                        <p className='text-start'>{Projects.description}</p>
+        <section id="about" className="my-60 py-40">
+            <p className=" text-center">Get To Know Me</p>
+            <h1 className="text-6xl font-bold text-center mb-12">About Me</h1>
+            <div className="container flex flex-col items-center justify-center gap-11 mx-auto  bg-neutral-900 w-full mb-48">
+                <div className="flex flex-wrap justify-center gap-4">
+                    <div className="border-2 rounded-md p-3 w-96 h-70">
+                    <p className="text-center font-bold mb-3">Experience</p>
+                    <p className="text-center">1+ years</p>
+                    <p className="text-center mt-2">Software Development & Product Management</p>
+                </div>
+                <div className="border-2 rounded-md p-3 w-96 h-70">
+                    <p className="text-center font-bold mb-3">Education</p>
+                    <p className="text-center">BSc Honours Computer Science: 1st Class</p>
+                    <p className="text-center">A Level: Computer Science - A*, Politics - A, Philosophy - A</p>
+                </div>
+                <div className="border-2 rounded-md p-3 w-96 h-70">
+                    <p className="text-center font-bold mb-3">Skills</p>
+                    <p className="text-center">Java, Python, React, SQL, APIs</p>
+                    <p className="text-center">HTML, CSS, JavaScript, PySpark</p>
+                </div>
+                
+            </div>
+            </div>
+        </section>
+
+        <section id="work_experience" className="my-60 py-40">
+            <p className=" text-center">Explore my</p>
+            <h1 className="text-6xl font-bold text-center mb-10">Work Experience</h1>
+            <div className="container flex flex-col items-center justify-center gap-11 mx-auto bg-neutral-900 w-full">
+                <div className="flex flex-wrap justify-center gap-3">
+                {Work_Experiences.map((Work_Experiences, index) => (
+                    <div className="border-2 rounded-3xl p-3 w-96 h-70">
+                        <p className="text-center font-bold mb-3">{Work_Experiences.job_title}</p>
+                        <div className='flex space-x-3 grid-rows-2  justify-center'>
+                            <img src={Work_Experiences.logo} height={40} width={40}/>
+                            <p className="text-center mt-2">{Work_Experiences.company}</p>
+                        </div>
+                            <p className='text-center font-thin mt-3 antialiased'>{Work_Experiences.duration}</p>
                         <div>
-                        {Projects.decription_list.map((text, textIndex) => (
+                        {Work_Experiences.description.map((text, textIndex) => (
                             <div key={textIndex}>
                                 <ol className=' list-disc pl-5'>
-                                    <li className='mt-4 text-start'>{text}</li>
+                                    <li className='mt-4'>{text}</li>
                                 </ol>
                             </div>
                         ))}
+                        </div>
                     </div>
-                    <div className='flex flex-nowrap my-5 gap-4 justify-center'>
-                    {Projects.technologiesLogo.map((image, imgIndex) => (
-                            <div key={imgIndex} className='flex flex-nowrap my-5 gap-4 justify-center'>
-                                <img className='rounded-md' src={image} height={15} width={15}/>
-                            </div>
-                        ))}
+                ))}
+            </div>
+            </div>
+        </section>
 
-                    </div>
-                    </div>
-                </div>
-            ))}
-        </Carousel>
-    </div>
-</section>
+        <section id="projects" className="my-60">
+            <p className="text-center">Browse My Recent</p>
+            <h1 className="text-6xl font-bold text-center mb-10">Projects</h1>
+            <div className="container flex flex-col items-center justify-center gap-11 mx-auto w-full">
+                <Carousel swipeable={true} showIndicators={true} showThumbs={false} showArrows={true}>
+                    {Projects.map((Projects, index) => (
+                        <div key={index} className="container w-full gap-6">
+                            {/* Column for Image 
+                            <div className="flex justify-center items-center">
+                                <img
+                                    className="rounded-3xl"
+                                    src={Projects.image}
+                                    height={200}
+                                    width={200}
+                                    alt={`${Projects.Title} image`}
+                                />
+                            </div>
+                            */}
+
+                            {/* Column for Text */}
+                            <div className="flex flex-col justify-center">
+                                <h2 className="text-3xl font-bold my-4 text-center">{Projects.Title}</h2>
+                                <p className='text-start'>{Projects.description}</p>
+                                <div>
+                                {Projects.decription_list.map((text, textIndex) => (
+                                    <div key={textIndex}>
+                                        <ol className=' list-disc pl-5'>
+                                            <li className='mt-4 text-start'>{text}</li>
+                                        </ol>
+                                    </div>
+                                ))}
+                            </div>
+                            <div className='flex flex-nowrap my-5 gap-4 justify-center'>
+                            {Projects.technologiesLogo.map((image, imgIndex) => (
+                                    <div key={imgIndex} className='flex flex-nowrap my-5 gap-4 justify-center'>
+                                        <img className='rounded-md' src={image} height={5} width={5}/>
+                                    </div>
+                                ))}
+
+                            </div>
+                            </div>
+                        </div>
+                    ))}
+                </Carousel>
+            </div>
+        </section>
 
 
     </div>

@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 const App = () => {
   return (
     <Router>
-      <div className='overflow-x-hidden'>
+      <div className='overflow-x-hidden bg-neutral-900'>
         <Navbar />
         <Main/>
       </div>
