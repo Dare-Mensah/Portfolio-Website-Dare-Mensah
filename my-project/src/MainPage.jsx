@@ -1,5 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
+import {motion} from 'framer-motion';
+import { AnimatePresence } from "motion/react"
 //import Slider from "react-slick";
 
 //import "slick-carousel/slick/slick.css";
@@ -19,7 +21,11 @@ import firebase from './assets/firebaeLogo.png'
 import flaskLogo from './assets/flask_logo.jpg'
 import gephiLogo from './assets/gephiLogo.jpg'
 import reactLogo from './assets/reactLogo.png'
-import terminalLogo from './assets/programming.png'
+
+
+import education from './assets/graduation-hat.png'
+import worker from './assets/worker.png'
+import coding from './assets/coding.png'
 
 
 
@@ -43,6 +49,8 @@ const Main = () => {
     const isMobile = useMediaQuery({ query: '(max-width: 499px)' });
     const isTablet = useMediaQuery({ query: '(min-width: 500px) and (max-width: 820px)' });
     const isDesktop = useMediaQuery({ query: '(min-width: 1024px)' });
+
+    const [isVisible, setIsVisible] = useState(true)
 
     const Work_Experiences = [
         {
@@ -138,12 +146,13 @@ const Main = () => {
         },
 
     ]
-    
+
+
 
   return (
-    <div className='bg-neutral-900 text-white snap-y snap-mandatory overflow-y-scroll h-screen scroll-smooth no-scrollbar'>
+    <div className='bg-neutral-950 text-white snap-y snap-mandatory overflow-y-scroll h-screen scroll-smooth no-scrollbar'>
 
-        <section id='profile' className="w-full py-40 bg-neutral-900 text-white snap-start h-screen no-scrollbar">
+        <section id='profile' className="w-full py-40 bg-neutral-950 text-white snap-start h-screen no-scrollbar">
             <div className='snap-y snap-mandatory overflow-y-scroll h-screen scroll-smooth no-scrollbar'>
                 <div className="container mx-auto px-8 items-center justify-between gap-1">
                     
@@ -166,20 +175,21 @@ const Main = () => {
 
                         
                         <div className="flex flex-wrap items-center gap-4">
-                            <a 
-                                href="https://drive.google.com/uc?export=download&id=1VS2lJSuqRcQFO7LDeIljtOf8jCjygMTz" className="bg-neutral-900 border border-gray-300 px-4 py-2 text-white font-light hover:bg-stone-800"
+                            <motion.a 
+                                href="https://drive.google.com/uc?export=download&id=1VS2lJSuqRcQFO7LDeIljtOf8jCjygMTz" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}
+                                className="bg-neutral-900 border border-gray-300 px-4 py-2 text-white font-light hover:bg-stone-800"
                                 > Download CV
-                            </a>
+                            </motion.a>
 
-                            <a 
-                                href="https://www.linkedin.com/in/dare-mensah-a78934226/">
+                            <motion.a 
+                                href="https://www.linkedin.com/in/dare-mensah-a78934226/" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
                                 <img src={linkinimg} alt="LinkedIn" className="h-10 w-10" />
-                            </a>
+                            </motion.a>
 
-                            <a 
-                                href="https://github.com/Dare-Mensah">
+                            <motion.a 
+                                href="https://github.com/Dare-Mensah" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
                                 <img src={githubimg} alt="GitHub" className="h-10 w-10" />
-                            </a>
+                            </motion.a>
                         </div>
                     </div>
 
@@ -188,30 +198,48 @@ const Main = () => {
             </div>
         </section>
 
-        <section id="about" className="snap-start h-screen py-40 no-scrollbar">
+        <section id="about" className="snap-start h-screen py-40 no-scrollbar ">
             <div className='snap-y snap-mandatory overflow-y-scroll h-screen scroll-smooth no-scrollbar'>
                 <p className=" text-center">Get To Know Me</p>
                 <h1 className="text-6xl font-bold text-center mb-12">About Me</h1>
-                <div className="container flex flex-col items-center justify-center gap-11 mx-auto  bg-neutral-900 w-full mb-48">
-                    <div className="flex flex-wrap justify-center gap-4">
-                        <div className="border-2 rounded-md p-3 w-96 h-70">
-                        <p className="text-center font-bold mb-3">Experience</p>
-                        <p className="text-center">1+ years</p>
-                        <p className="text-center mt-2">Software Development & Product Management</p>
-                    </div>
-                    <div className="border-2 rounded-md p-3 w-96 h-70">
-                        <p className="text-center font-bold mb-3">Education</p>
-                        <p className="text-center">BSc Honours Computer Science: 1st Class</p>
-                        <p className="text-center">A Level: Computer Science - A*, Politics - A, Philosophy - A</p>
-                    </div>
-                    <div className="border-2 rounded-md p-3 w-96 h-70">
-                        <p className="text-center font-bold mb-3">Skills</p>
-                        <p className="text-center">Java, Python, React, SQL, APIs</p>
-                        <p className="text-center">HTML, CSS, JavaScript, PySpark</p>
-                    </div>
-                    
+                <div className='flex flex-cols-3 flex-wrap gap-16 justify-center items-center mx-auto'>
+                    {isMobile ? (
+                        <>
+                        <motion.button className='bg-neutral-950' whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                            <img src={education} alt="EducationImage" height={100} width={100} />
+                            <h1 className='text-center p-4 font-medium text-xl'>Education</h1>
+                        </motion.button>
+
+                        <motion.button className='bg-neutral-950' whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                            <img src={worker} alt="EducationImage" height={100} width={100} />
+                            <h1 className='text-center p-4 font-medium text-xl'>Experience</h1>
+                        </motion.button>
+
+                        <motion.button className='bg-neutral-950' whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                            <img src={coding} alt="EducationImage" height={100} width={100} />
+                            <h1 className='text-center p-4 font-medium text-xl'>Skills</h1>
+                        </motion.button>
+                        </>
+                    ) : (
+                        <>
+                        <motion.button className='bg-neutral-950' whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                            <img src={education} alt="EducationImage" height={170} width={170} />
+                            <h1 className='text-center p-4 font-medium text-xl'>Education</h1>
+                        </motion.button>
+
+                        <motion.button className='bg-neutral-950' whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                            <img src={worker} alt="EducationImage" height={170} width={170} />
+                            <h1 className='text-center p-4 font-medium text-xl'>Experience</h1>
+                        </motion.button>
+
+                        <motion.button className='bg-neutral-950' whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                            <img src={coding} alt="EducationImage" height={170} width={170} />
+                            <h1 className='text-center p-4 font-medium text-xl'>Skills</h1>
+                        </motion.button>
+                        </>
+                    )}
                 </div>
-                </div>
+
             </div>
         </section>
 
@@ -219,7 +247,7 @@ const Main = () => {
             <div className='snap-y snap-mandatory overflow-y-scroll h-screen scroll-smooth no-scrollbar py-40'>
                 <p className=" text-center">Explore my</p>
                 <h1 className="text-6xl font-bold text-center mb-10">Work Experience</h1>
-                <div className="container flex flex-col items-center justify-center gap-11 mx-auto bg-neutral-900 w-full">
+                <div className="container flex flex-col items-center justify-center gap-11 mx-auto bg-neutral-950 w-full">
                     <div className="flex flex-wrap justify-center gap-3">
                     {Work_Experiences.map((Work_Experiences, index) => (
                         <div className="border-2 rounded-3xl p-3 w-96 h-70">
@@ -245,7 +273,7 @@ const Main = () => {
             </div>
         </section>
 
-        <section id="projects" className="my-60 snap-start h-screen py-60 no-scrollbar mb-32 mt-20">
+        <section id="projects" className="my-60 snap-start h-screen py-60 no-scrollbar mb-32 mt-20 ">
             <div className='snap-y snap-mandatory overflow-y-scroll h-screen scroll-smooth no-scrollbar'>
                 <p className="text-center">Browse My Recent</p>
                 <h1 className="text-6xl font-bold text-center mb-10">Projects</h1>
@@ -253,19 +281,6 @@ const Main = () => {
                     <Carousel swipeable={true} showIndicators={true} showThumbs={false} showArrows={true}>
                         {Projects.map((Projects, index) => (
                             <div key={index} className="container w-full gap-6">
-                                {/* Column for Image 
-                                <div className="flex justify-center items-center">
-                                    <img
-                                        className="rounded-3xl"
-                                        src={Projects.image}
-                                        height={200}
-                                        width={200}
-                                        alt={`${Projects.Title} image`}
-                                    />
-                                </div>
-                                */}
-
-                                {/* Column for Text */}
                                 <div className="flex flex-col justify-center">
                                     <h2 className="text-3xl font-bold my-4 text-center">{Projects.Title}</h2>
                                     <p className='text-start'>{Projects.description}</p>
@@ -302,3 +317,45 @@ const Main = () => {
 }
 
 export default Main
+
+
+
+
+
+
+                {/** 
+                <div className="container flex flex-col items-center justify-center gap-11 mx-auto  bg-neutral-950 w-full mb-48">
+                    <div className="flex flex-wrap justify-center gap-4">
+                        <div className="border-2 rounded-md p-3 w-96 h-70">
+                        <p className="text-center font-bold mb-3">Experience</p>
+                        <p className="text-center">1+ years</p>
+                        <p className="text-center mt-2">Software Development & Product Management</p>
+                    </div>
+                    <div className="border-2 rounded-md p-3 w-96 h-70">
+                        <p className="text-center font-bold mb-3">Education</p>
+                        <p className="text-center">BSc Honours Computer Science: 1st Class</p>
+                        <p className="text-center">A Level: Computer Science - A*, Politics - A, Philosophy - A</p>
+                    </div>
+                    <div className="border-2 rounded-md p-3 w-96 h-70">
+                        <p className="text-center font-bold mb-3">Skills</p>
+                        <p className="text-center">Java, Python, React, SQL, APIs</p>
+                        <p className="text-center">HTML, CSS, JavaScript, PySpark</p>
+                    </div>
+                    
+                </div>
+                </div>
+                */}
+
+
+
+                            {/* Column for Image 
+                                <div className="flex justify-center items-center">
+                                    <img
+                                        className="rounded-3xl"
+                                        src={Projects.image}
+                                        height={200}
+                                        width={200}
+                                        alt={`${Projects.Title} image`}
+                                    />
+                                </div>
+                                */}
