@@ -141,148 +141,156 @@ const Main = () => {
     
 
   return (
-    <div className='bg-neutral-900 text-white'>
+    <div className='bg-neutral-900 text-white snap-y snap-mandatory overflow-y-scroll h-screen scroll-smooth no-scrollbar'>
 
-        <section id='profile' className="w-full py-40 bg-neutral-900 text-white">
-            <div className="container mx-auto px-8 items-center justify-between gap-1">
-                
-                {/* Left Text Content */}
-                <div className="flex flex-col items-start text-left max-w-screen-lg space-h-2 mt-10">
-                    {isMobile ? (<h4 className="text-xl font-medium text-white mb-2">Software Developer</h4>) : (<h4 className="text-3xl font-medium text-white mb-2">Software Developer</h4>)}
-                    {isMobile ? (<h1 className="text-5xl font-bold text-white mb-6">Dare Mensah</h1>) : (<h1 className="text-8xl font-bold text-white mb-6">Dare Mensah</h1>)}
+        <section id='profile' className="w-full py-40 bg-neutral-900 text-white snap-start h-screen no-scrollbar">
+            <div className='snap-y snap-mandatory overflow-y-scroll h-screen scroll-smooth no-scrollbar'>
+                <div className="container mx-auto px-8 items-center justify-between gap-1">
+                    
+                    {/* Left Text Content */}
+                    <div className="flex flex-col items-start text-left max-w-screen-lg space-h-2 mt-10">
+                        {isMobile ? (<h4 className="text-xl font-medium text-white mb-2">Software Developer</h4>) : (<h4 className="text-3xl font-medium text-white mb-2">Software Developer</h4>)}
+                        {isMobile ? (<h1 className="text-5xl font-bold text-white mb-6">Dare Mensah</h1>) : (<h1 className="text-8xl font-bold text-white mb-6">Dare Mensah</h1>)}
 
-                    {(isMobile) ? (<p className="text-white mb-6 leading-relaxed font-extralight text-center text-sm">
-                        A passionate Computer Science graduate with First Class Honors from Queen Mary University of London. 
-                        With hands-on experience in software development, data analytics, and cloud solutions, 
-                        I specialize in leveraging technologies like React, Python, Firebase, and SQL to create impactful solutions. 
-                        Currently, I am advancing my expertise as a Data Analyst at Amazon, where I contribute to delivering cutting-edge technology solutions.
-                    </p>) : ( <p className="text-white mb-6 leading-relaxed font-extralight">
-                        A passionate Computer Science graduate with First Class Honors from Queen Mary University of London. 
-                        With hands-on experience in software development, data analytics, and cloud solutions, 
-                        I specialize in leveraging technologies like React, Python, Firebase, and SQL to create impactful solutions. 
-                        Currently, I am advancing my expertise as a Data Analyst at Amazon, where I contribute to delivering cutting-edge technology solutions.
-                    </p>)}
+                        {(isMobile) ? (<p className="text-white mb-6 leading-relaxed font-extralight text-center text-sm">
+                            A passionate Computer Science graduate with First Class Honors from Queen Mary University of London. 
+                            With hands-on experience in software development, data analytics, and cloud solutions, 
+                            I specialize in leveraging technologies like React, Python, Firebase, and SQL to create impactful solutions. 
+                            Currently, I am advancing my expertise as a Data Analyst at Amazon, where I contribute to delivering cutting-edge technology solutions.
+                        </p>) : ( <p className="text-white mb-6 leading-relaxed font-extralight">
+                            A passionate Computer Science graduate with First Class Honors from Queen Mary University of London. 
+                            With hands-on experience in software development, data analytics, and cloud solutions, 
+                            I specialize in leveraging technologies like React, Python, Firebase, and SQL to create impactful solutions. 
+                            Currently, I am advancing my expertise as a Data Analyst at Amazon, where I contribute to delivering cutting-edge technology solutions.
+                        </p>)}
+
+                        
+                        <div className="flex flex-wrap items-center gap-4">
+                            <a 
+                                href="https://drive.google.com/uc?export=download&id=1VS2lJSuqRcQFO7LDeIljtOf8jCjygMTz" className="bg-neutral-900 border border-gray-300 px-4 py-2 text-white font-light hover:bg-stone-800"
+                                > Download CV
+                            </a>
+
+                            <a 
+                                href="https://www.linkedin.com/in/dare-mensah-a78934226/">
+                                <img src={linkinimg} alt="LinkedIn" className="h-10 w-10" />
+                            </a>
+
+                            <a 
+                                href="https://github.com/Dare-Mensah">
+                                <img src={githubimg} alt="GitHub" className="h-10 w-10" />
+                            </a>
+                        </div>
+                    </div>
 
                     
-                    <div className="flex flex-wrap items-center gap-4">
-                        <a 
-                            href="https://drive.google.com/uc?export=download&id=1VS2lJSuqRcQFO7LDeIljtOf8jCjygMTz" className="bg-neutral-900 border border-gray-300 px-4 py-2 text-white font-light hover:bg-stone-800"
-                            > Download CV
-                        </a>
-
-                        <a 
-                            href="https://www.linkedin.com/in/dare-mensah-a78934226/">
-                            <img src={linkinimg} alt="LinkedIn" className="h-10 w-10" />
-                        </a>
-
-                        <a 
-                            href="https://github.com/Dare-Mensah">
-                            <img src={githubimg} alt="GitHub" className="h-10 w-10" />
-                        </a>
-                    </div>
                 </div>
-
-                
             </div>
         </section>
 
-        <section id="about" className="my-60 py-40">
-            <p className=" text-center">Get To Know Me</p>
-            <h1 className="text-6xl font-bold text-center mb-12">About Me</h1>
-            <div className="container flex flex-col items-center justify-center gap-11 mx-auto  bg-neutral-900 w-full mb-48">
-                <div className="flex flex-wrap justify-center gap-4">
+        <section id="about" className="snap-start h-screen py-40 no-scrollbar">
+            <div className='snap-y snap-mandatory overflow-y-scroll h-screen scroll-smooth no-scrollbar'>
+                <p className=" text-center">Get To Know Me</p>
+                <h1 className="text-6xl font-bold text-center mb-12">About Me</h1>
+                <div className="container flex flex-col items-center justify-center gap-11 mx-auto  bg-neutral-900 w-full mb-48">
+                    <div className="flex flex-wrap justify-center gap-4">
+                        <div className="border-2 rounded-md p-3 w-96 h-70">
+                        <p className="text-center font-bold mb-3">Experience</p>
+                        <p className="text-center">1+ years</p>
+                        <p className="text-center mt-2">Software Development & Product Management</p>
+                    </div>
                     <div className="border-2 rounded-md p-3 w-96 h-70">
-                    <p className="text-center font-bold mb-3">Experience</p>
-                    <p className="text-center">1+ years</p>
-                    <p className="text-center mt-2">Software Development & Product Management</p>
-                </div>
-                <div className="border-2 rounded-md p-3 w-96 h-70">
-                    <p className="text-center font-bold mb-3">Education</p>
-                    <p className="text-center">BSc Honours Computer Science: 1st Class</p>
-                    <p className="text-center">A Level: Computer Science - A*, Politics - A, Philosophy - A</p>
-                </div>
-                <div className="border-2 rounded-md p-3 w-96 h-70">
-                    <p className="text-center font-bold mb-3">Skills</p>
-                    <p className="text-center">Java, Python, React, SQL, APIs</p>
-                    <p className="text-center">HTML, CSS, JavaScript, PySpark</p>
-                </div>
-                
-            </div>
-            </div>
-        </section>
-
-        <section id="work_experience" className="my-60 py-40">
-            <p className=" text-center">Explore my</p>
-            <h1 className="text-6xl font-bold text-center mb-10">Work Experience</h1>
-            <div className="container flex flex-col items-center justify-center gap-11 mx-auto bg-neutral-900 w-full">
-                <div className="flex flex-wrap justify-center gap-3">
-                {Work_Experiences.map((Work_Experiences, index) => (
-                    <div className="border-2 rounded-3xl p-3 w-96 h-70">
-                        <p className="text-center font-bold mb-3">{Work_Experiences.job_title}</p>
-                        <div className='flex space-x-3 grid-rows-2  justify-center'>
-                            <img src={Work_Experiences.logo} height={40} width={40}/>
-                            <p className="text-center mt-2">{Work_Experiences.company}</p>
-                        </div>
-                            <p className='text-center font-thin mt-3 antialiased'>{Work_Experiences.duration}</p>
-                        <div>
-                        {Work_Experiences.description.map((text, textIndex) => (
-                            <div key={textIndex}>
-                                <ol className=' list-disc pl-5'>
-                                    <li className='mt-4'>{text}</li>
-                                </ol>
-                            </div>
-                        ))}
-                        </div>
+                        <p className="text-center font-bold mb-3">Education</p>
+                        <p className="text-center">BSc Honours Computer Science: 1st Class</p>
+                        <p className="text-center">A Level: Computer Science - A*, Politics - A, Philosophy - A</p>
                     </div>
-                ))}
-            </div>
+                    <div className="border-2 rounded-md p-3 w-96 h-70">
+                        <p className="text-center font-bold mb-3">Skills</p>
+                        <p className="text-center">Java, Python, React, SQL, APIs</p>
+                        <p className="text-center">HTML, CSS, JavaScript, PySpark</p>
+                    </div>
+                    
+                </div>
+                </div>
             </div>
         </section>
 
-        <section id="projects" className="my-60">
-            <p className="text-center">Browse My Recent</p>
-            <h1 className="text-6xl font-bold text-center mb-10">Projects</h1>
-            <div className="container flex flex-col items-center justify-center gap-11 mx-auto w-full">
-                <Carousel swipeable={true} showIndicators={true} showThumbs={false} showArrows={true}>
-                    {Projects.map((Projects, index) => (
-                        <div key={index} className="container w-full gap-6">
-                            {/* Column for Image 
-                            <div className="flex justify-center items-center">
-                                <img
-                                    className="rounded-3xl"
-                                    src={Projects.image}
-                                    height={200}
-                                    width={200}
-                                    alt={`${Projects.Title} image`}
-                                />
+        <section id="work_experience" className="my-60 snap-start h-screen py-40 no-scrollbar">
+            <div className='snap-y snap-mandatory overflow-y-scroll h-screen scroll-smooth no-scrollbar py-40'>
+                <p className=" text-center">Explore my</p>
+                <h1 className="text-6xl font-bold text-center mb-10">Work Experience</h1>
+                <div className="container flex flex-col items-center justify-center gap-11 mx-auto bg-neutral-900 w-full">
+                    <div className="flex flex-wrap justify-center gap-3">
+                    {Work_Experiences.map((Work_Experiences, index) => (
+                        <div className="border-2 rounded-3xl p-3 w-96 h-70">
+                            <p className="text-center font-bold mb-3">{Work_Experiences.job_title}</p>
+                            <div className='flex space-x-3 grid-rows-2  justify-center'>
+                                <img src={Work_Experiences.logo} height={40} width={40}/>
+                                <p className="text-center mt-2">{Work_Experiences.company}</p>
                             </div>
-                            */}
-
-                            {/* Column for Text */}
-                            <div className="flex flex-col justify-center">
-                                <h2 className="text-3xl font-bold my-4 text-center">{Projects.Title}</h2>
-                                <p className='text-start'>{Projects.description}</p>
-                                <div>
-                                {Projects.decription_list.map((text, textIndex) => (
-                                    <div key={textIndex}>
-                                        <ol className=' list-disc pl-5'>
-                                            <li className='mt-4 text-start'>{text}</li>
-                                        </ol>
-                                    </div>
-                                ))}
-                            </div>
-                            <div className='flex flex-nowrap my-5 gap-4 justify-center'>
-                            {Projects.technologiesLogo.map((image, imgIndex) => (
-                                    <div key={imgIndex} className='flex flex-nowrap my-5 gap-4 justify-center'>
-                                        <img className='rounded-md' src={image} height={5} width={5}/>
-                                    </div>
-                                ))}
-
-                            </div>
+                                <p className='text-center font-thin mt-3 antialiased'>{Work_Experiences.duration}</p>
+                            <div>
+                            {Work_Experiences.description.map((text, textIndex) => (
+                                <div key={textIndex}>
+                                    <ol className=' list-disc pl-5'>
+                                        <li className='mt-4'>{text}</li>
+                                    </ol>
+                                </div>
+                            ))}
                             </div>
                         </div>
                     ))}
-                </Carousel>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" className="my-60 snap-start h-screen py-60 no-scrollbar mb-32 mt-20">
+            <div className='snap-y snap-mandatory overflow-y-scroll h-screen scroll-smooth no-scrollbar'>
+                <p className="text-center">Browse My Recent</p>
+                <h1 className="text-6xl font-bold text-center mb-10">Projects</h1>
+                <div className="container flex justify-center gap-11 mx-auto w-full">
+                    <Carousel swipeable={true} showIndicators={true} showThumbs={false} showArrows={true}>
+                        {Projects.map((Projects, index) => (
+                            <div key={index} className="container w-full gap-6">
+                                {/* Column for Image 
+                                <div className="flex justify-center items-center">
+                                    <img
+                                        className="rounded-3xl"
+                                        src={Projects.image}
+                                        height={200}
+                                        width={200}
+                                        alt={`${Projects.Title} image`}
+                                    />
+                                </div>
+                                */}
+
+                                {/* Column for Text */}
+                                <div className="flex flex-col justify-center">
+                                    <h2 className="text-3xl font-bold my-4 text-center">{Projects.Title}</h2>
+                                    <p className='text-start'>{Projects.description}</p>
+                                    <div>
+                                    {Projects.decription_list.map((text, textIndex) => (
+                                        <div key={textIndex}>
+                                            <ol className=' list-disc pl-5'>
+                                                <li className='mt-4 text-start'>{text}</li>
+                                            </ol>
+                                        </div>
+                                    ))}
+                                </div>
+                                <div className='flex flex-nowrap my-5 gap-4'>
+                                {Projects.technologiesLogo.map((image, imgIndex) => (
+                                        <div key={imgIndex} className='flex flex-nowrap my-5 gap-4'>
+                                            <img className='rounded-md h-12 w-11' src={image}/>
+                                        </div>
+                                    ))}
+
+                                </div>
+                                </div>
+                            </div>
+                        ))}
+                    </Carousel>
+                </div>
             </div>
         </section>
 
