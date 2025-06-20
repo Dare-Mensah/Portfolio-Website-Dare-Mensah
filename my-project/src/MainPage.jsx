@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import {motion} from 'framer-motion';
 import { AnimatePresence } from "motion/react"
+import { TypeAnimation } from 'react-type-animation';
 //import Slider from "react-slick";
 
 //import "slick-carousel/slick/slick.css";
@@ -50,7 +51,56 @@ const Main = () => {
     const isTablet = useMediaQuery({ query: '(min-width: 500px) and (max-width: 820px)' });
     const isDesktop = useMediaQuery({ query: '(min-width: 1024px)' });
 
-    const [isVisible, setIsVisible] = useState(true)
+    const [showEducation, setShowEducation] = useState(false);
+    const [showExperience, setShowExperience] = useState(false);
+    const [showSkills, setShowSkills] = useState(false);
+
+    const Education = () => (
+    <motion.div
+        key="education"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.8 }}
+        transition={{ duration: 0.5 }}
+        className='border-2 rounded w-96 h-72 mx-auto flex flex-col justify-center items-center text-center p-4'
+    >
+        <p className="text-xl font-bold mb-3">Education</p>
+        <p>BSc Honours Computer Science: 1st Class</p>
+        <p>A Level: Computer Science - A*, Politics - A, Philosophy - A</p>
+    </motion.div>
+    );
+
+    const Experience = () => (
+    <motion.div
+        key="experience"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.8 }}
+        transition={{ duration: 0.5 }}
+        className='border-2 rounded w-96 h-72 mx-auto flex flex-col justify-center items-center text-center p-4'
+    >
+        <p className="text-xl font-bold mb-3">Experience</p>
+        <p>- Software Development</p>
+        <p>- Product Management</p>
+        <p>- Data Analytics</p>
+        <p>- Financial/Technology Risk</p>
+    </motion.div>
+    );
+
+    const Skills = () => (
+    <motion.div
+        key="skills"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.8 }}
+        transition={{ duration: 0.5 }}
+        className='border-2 rounded w-96 h-72 mx-auto flex flex-col justify-center items-center text-center p-4'
+    >
+        <p className="text-xl font-bold mb-3">Skills</p>
+        <p>Java, Python, React, SQL, APIs</p>
+        <p>HTML, CSS, JavaScript, PySpark</p>
+    </motion.div>
+    );
 
     const Work_Experiences = [
         {
@@ -158,36 +208,46 @@ const Main = () => {
                     
                     {/* Left Text Content */}
                     <div className="flex flex-col items-start text-left max-w-screen-lg space-h-2 mt-10">
-                        {isMobile ? (<h4 className="text-xl font-medium text-white mb-2">Software Developer</h4>) : (<h4 className="text-3xl font-medium text-white mb-2">Software Developer</h4>)}
-                        {isMobile ? (<h1 className="text-5xl font-bold text-white mb-6">Dare Mensah</h1>) : (<h1 className="text-8xl font-bold text-white mb-6">Dare Mensah</h1>)}
+                        <TypeAnimation className={`text-white mb-2 ${isMobile ? 'text-xl font-medium' : 'text-3xl font-medium'}`}
+                        sequence={['Software Developer', 1000,
+                        'Data Analyst', 1000, 
+                        'Product/Project Manager', 1000,
+                        'Finance/Technology Risk Consultant', 1000
+                        ]}
+                        speed={60}
+                        repeat={Infinity}/>
 
-                        {(isMobile) ? (<p className="text-white mb-6 leading-relaxed font-extralight text-center text-sm">
-                            A passionate Computer Science graduate with First Class Honors from Queen Mary University of London. 
-                            With hands-on experience in software development, data analytics, and cloud solutions, 
-                            I specialize in leveraging technologies like React, Python, Firebase, and SQL to create impactful solutions. 
-                            Currently, I am advancing my expertise as a Data Analyst at Amazon, where I contribute to delivering cutting-edge technology solutions.
-                        </p>) : ( <p className="text-white mb-6 leading-relaxed font-extralight">
-                            A passionate Computer Science graduate with First Class Honors from Queen Mary University of London. 
-                            With hands-on experience in software development, data analytics, and cloud solutions, 
-                            I specialize in leveraging technologies like React, Python, Firebase, and SQL to create impactful solutions. 
-                            Currently, I am advancing my expertise as a Data Analyst at Amazon, where I contribute to delivering cutting-edge technology solutions.
-                        </p>)}
+                        <motion.h1 
+                        initial={{ opacity: 0, scale: 0.5 }}    
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{
+                            duration: 0.8,
+                            delay: 0.5,
+                            ease: [0, 0.71, 0.2, 1.01],
+                        }}
+                        className={`text-white mb-6 ${isMobile ? 'text-5xl font-bold' : 'text-8xl font-bold'}`}>Dare Mensah</motion.h1>
+
+
+                        <TypeAnimation className={`text-white mb-6 leading-relaxed font-extralight ${isMobile ? 'text-center text-sm' : ''}`}
+                        sequence={['A passionate Computer Science graduate with First Class Honors from Queen Mary University of London. With hands-on experience in software development, data analytics, and cloud solutions, I specialize in leveraging technologies like React, Python, Firebase, and SQL to create impactful solutions. Currently, I am advancing my expertise as a Data Analyst at Amazon, where I contribute to delivering cutting-edge technology solutions.']}
+                        speed={85}
+                        />
 
                         
                         <div className="flex flex-wrap items-center gap-4">
                             <motion.a 
-                                href="https://drive.google.com/uc?export=download&id=1VS2lJSuqRcQFO7LDeIljtOf8jCjygMTz" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}
+                                href="https://drive.google.com/uc?export=download&id=1VS2lJSuqRcQFO7LDeIljtOf8jCjygMTz" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} initial = {{scale: 0}} animate={{scale:1}} 
                                 className="bg-neutral-900 border border-gray-300 px-4 py-2 text-white font-light hover:bg-stone-800"
                                 > Download CV
                             </motion.a>
 
                             <motion.a 
-                                href="https://www.linkedin.com/in/dare-mensah-a78934226/" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                                href="https://www.linkedin.com/in/dare-mensah-a78934226/" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} initial = {{scale: 0}} animate={{scale:1}} >
                                 <img src={linkinimg} alt="LinkedIn" className="h-10 w-10" />
                             </motion.a>
 
                             <motion.a 
-                                href="https://github.com/Dare-Mensah" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                                href="https://github.com/Dare-Mensah" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} initial = {{scale: 0}} animate={{scale:1}} >
                                 <img src={githubimg} alt="GitHub" className="h-10 w-10" />
                             </motion.a>
                         </div>
@@ -198,49 +258,48 @@ const Main = () => {
             </div>
         </section>
 
-        <section id="about" className="snap-start h-screen py-40 no-scrollbar ">
+        <section id="about" className="snap-start min-h-screen py-40 no-scrollbar ">
             <div className='snap-y snap-mandatory overflow-y-scroll h-screen scroll-smooth no-scrollbar'>
                 <p className=" text-center">Get To Know Me</p>
                 <h1 className="text-6xl font-bold text-center mb-12">About Me</h1>
-                <div className='flex flex-cols-3 flex-wrap gap-16 justify-center items-center mx-auto'>
-                    {isMobile ? (
-                        <>
-                        <motion.button className='bg-neutral-950' whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                            <img src={education} alt="EducationImage" height={100} width={100} />
-                            <h1 className='text-center p-4 font-medium text-xl'>Education</h1>
-                        </motion.button>
+                <div className='flex flex-wrap gap-16 justify-center items-center mx-auto'>
+                    <div className={`flex ${isMobile ? 'flex-cols-2 gap-1' : 'flex-wrap flex-cols-3 gap-16'} justify-center items-center mb-12`}>
+                            <motion.button
+                                onClick={() => setShowEducation(!showEducation)}
+                                whileTap={{ scale: 0.95 }} whileHover={{ scale: 1.1 }} 
+                                className="bg-neutral-950 px-4 py-2 rounded-lg text-white font-medium"
+                            >
+                                {(showEducation) ? (<img src={education} alt="Education" width={isMobile ? 85 : 150} /> ) : (<img src={education} alt="Education" width={isMobile ? 85 : 150} />)}
+                                <h1 className='text-center p-4 font-medium text-xl'>Education</h1>
+                            </motion.button>
 
-                        <motion.button className='bg-neutral-950' whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                            <img src={worker} alt="EducationImage" height={100} width={100} />
-                            <h1 className='text-center p-4 font-medium text-xl'>Experience</h1>
-                        </motion.button>
+                            <motion.button
+                                onClick={() => setShowExperience(!showExperience)}
+                                whileTap={{ scale: 0.95 }} whileHover={{ scale: 1.1 }} 
+                                className="bg-neutral-950 px-4 py-2 rounded-lg text-white font-medium"
+                            >
+                                {(showExperience) ? (<img src={worker} alt="Experience" width={isMobile ? 85 : 150} />) : (<img src={worker} alt="Experience" width={isMobile ? 85 : 150} />)}
+                                <h1 className='text-center p-4 font-medium text-xl'>Experience</h1>
+                            </motion.button>
 
-                        <motion.button className='bg-neutral-950' whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                            <img src={coding} alt="EducationImage" height={100} width={100} />
-                            <h1 className='text-center p-4 font-medium text-xl'>Skills</h1>
-                        </motion.button>
-                        </>
-                    ) : (
-                        <>
-                        <motion.button className='bg-neutral-950' whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                            <img src={education} alt="EducationImage" height={170} width={170} />
-                            <h1 className='text-center p-4 font-medium text-xl'>Education</h1>
-                        </motion.button>
+                            <motion.button
+                                onClick={() => setShowSkills(!showSkills)}
+                                whileTap={{ scale: 0.95 }} whileHover={{ scale: 1.1 }} 
+                                className="bg-neutral-950 px-4 py-2 rounded-lg text-white font-medium"
+                            >
+                                {(showSkills) ? (<img src={coding} alt="Skills" width={isMobile ? 100 : 150} />) : (<img src={coding} alt="Skills" width={isMobile ? 100 : 150} />)}
+                                <h1 className='text-center p-4 font-medium text-xl'>Skills</h1>
+                            </motion.button>
+                            </div>
 
-                        <motion.button className='bg-neutral-950' whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                            <img src={worker} alt="EducationImage" height={170} width={170} />
-                            <h1 className='text-center p-4 font-medium text-xl'>Experience</h1>
-                        </motion.button>
-
-                        <motion.button className='bg-neutral-950' whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                            <img src={coding} alt="EducationImage" height={170} width={170} />
-                            <h1 className='text-center p-4 font-medium text-xl'>Skills</h1>
-                        </motion.button>
-                        </>
-                    )}
+                            {/* Animated Cards */}
+                            <div className={`flex ${isMobile ? 'flex-col' : 'flex-wrap'} gap-10 justify-center items-center`}>
+                            <AnimatePresence>{showEducation && <Education />}</AnimatePresence>
+                            <AnimatePresence>{showExperience && <Experience />}</AnimatePresence>
+                            <AnimatePresence>{showSkills && <Skills />}</AnimatePresence>
+                    </div>
                 </div>
-
-            </div>
+                </div>
         </section>
 
         <section id="work_experience" className="my-60 snap-start h-screen py-40 no-scrollbar">
