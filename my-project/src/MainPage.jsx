@@ -39,6 +39,8 @@ import FDMWellbeingHomepageOne from'./assets/FDMWellbeingPhone.png'
 import Spotify from './assets/SpotifyAnalysis.png'
 
 import {useMediaQuery} from 'react-responsive';
+import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
 
 import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
@@ -302,37 +304,346 @@ const Main = () => {
                 </div>
         </section>
 
-        <section id="work_experience" className="my-60 snap-start h-screen py-40 no-scrollbar">
+        <section id="work_experience" className="my-60 snap-start min-h-screen py-40 no-scrollbar">
             <div className='snap-y snap-mandatory overflow-y-scroll h-screen scroll-smooth no-scrollbar py-40'>
                 <p className=" text-center">Explore my</p>
                 <h1 className="text-6xl font-bold text-center mb-10">Work Experience</h1>
-                <div className="container flex flex-col items-center justify-center gap-11 mx-auto bg-neutral-950 w-full">
-                    <div className="flex flex-wrap justify-center gap-3">
-                    {Work_Experiences.map((Work_Experiences, index) => (
-                        <div className="border-2 rounded-3xl p-3 w-96 h-70">
-                            <p className="text-center font-bold mb-3">{Work_Experiences.job_title}</p>
-                            <div className='flex space-x-3 grid-rows-2  justify-center'>
-                                <img src={Work_Experiences.logo} height={40} width={40}/>
-                                <p className="text-center mt-2">{Work_Experiences.company}</p>
-                            </div>
-                                <p className='text-center font-thin mt-3 antialiased'>{Work_Experiences.duration}</p>
-                            <div>
-                            {Work_Experiences.description.map((text, textIndex) => (
-                                <div key={textIndex}>
-                                    <ol className=' list-disc pl-5'>
-                                        <li className='mt-4'>{text}</li>
-                                    </ol>
-                                </div>
-                            ))}
-                            </div>
-                        </div>
-                    ))}
-                </div>
+                <div className="container flex justify-center gap-11 mx-auto w-full">
+                <VerticalTimeline>
+                    <VerticalTimelineElement
+                    className="vertical-timeline-element--work"
+                    contentStyle={{
+                        background: "rgb(16, 16, 16)",
+                        color: "#fff",
+                        border: "2px solid white", // ✅ white border around the box
+                        borderRadius: "10px",       // optional: rounded corners
+                        padding: "20px"             // optional: spacing inside the box
+                    }}
+                    contentArrowStyle={{ borderRight: "7px solid rgb(86, 86, 86)" }}
+                    date="Feb 2025 - June 2025"
+                    iconStyle={{
+                        background: "white",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center"
+                    }}
+                    icon={
+                        <img
+                        src={amazonLogo}
+                        alt="Amazon Logo"
+                        style={{
+                            width: "100%",
+                            height: "100%",
+                            borderRadius: "50%"
+                        }}
+                        />
+                    }
+                    >
+                    <h3 className="vertical-timeline-element-title text-2xl text-white ">Data Analyst</h3>
+                    <h4 className="vertical-timeline-element-subtitle text-white font-semibold">Amazon</h4>
+                    <p className="text-white font-extralight">
+                        - Managed weekly country-level volume planning for multiple European regions, ensuring alignment across Customer Fulfilment, Surface Transportation, and Global Transportation Services.
+                    </p>
+                    <p className="text-white font-extralight">
+                        - Developed and maintained complex data queries, visualizations, and models for reporting and ad-hoc analysis using Excel, Quick Sight, ETL Jobs, AWS (S3 buckets, Redshift), and SQL.
+                    </p>
+                    </VerticalTimelineElement>
+
+
+                    <VerticalTimelineElement
+                    className="vertical-timeline-element--work"
+                    contentStyle={{
+                        background: "rgb(16, 16, 16)",
+                        color: "#fff",
+                        border: "2px solid white", // ✅ white border around the box
+                        borderRadius: "10px",       // optional: rounded corners
+                        padding: "20px"             // optional: spacing inside the box
+                    }}
+                    contentArrowStyle={{ borderRight: "7px solid rgb(86, 86, 86)" }}
+                    date="Dec 2024 - Present"
+                    iconStyle={{
+                        background: "white",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center"
+                    }}
+                    icon={
+                        <img
+                        src={reality_ai_labs_logo}
+                        alt="reality_ai_labs_logo"
+                        style={{
+                            width: "85%",
+                            height: "85%",
+                            borderRadius: "50%"
+                        }}
+                        />
+                    }
+                    >
+                    <h3 className="vertical-timeline-element-title text-2xl text-white ">Software Developer</h3>
+                    <h4 className="vertical-timeline-element-subtitle text-white font-semibold">Reality Ai Labs</h4>
+                    <p className="text-white font-extralight">
+                        - Reduced system bugs by 4% through thorough testing and debugging for high-quality code.
+                    </p>
+                    <p className="text-white font-extralight">
+                        - Created AI-powered tools (Marvel AI, Sky AI) to enhance global education and career coaching accessibility by 5%.
+                    </p>
+                    </VerticalTimelineElement>
+
+
+                    <VerticalTimelineElement
+                    className="vertical-timeline-element--work"
+                    contentStyle={{
+                        background: "rgb(16, 16, 16)",
+                        color: "#fff",
+                        border: "2px solid white", // ✅ white border around the box
+                        borderRadius: "10px",       // optional: rounded corners
+                        padding: "20px"             // optional: spacing inside the box
+                    }}
+                    contentArrowStyle={{ borderRight: "7px solid rgb(86, 86, 86)" }}
+                    date="Sep 2024 - Dec 2024"
+                    iconStyle={{
+                        background: "white",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center"
+                    }}
+                    icon={
+                        <img
+                        src={GTLogo}
+                        alt="GTLogo"
+                        style={{
+                            width: "85%",
+                            height: "85%",
+                            borderRadius: "50%"
+                        }}
+                        />
+                    }
+                    >
+                    <h3 className="vertical-timeline-element-title text-2xl text-white ">Technology Risk Consultant Associate</h3>
+                    <h4 className="vertical-timeline-element-subtitle text-white font-semibold">Grant Thornton</h4>
+                    <p className="text-white font-extralight">
+                        - Delivered end-to-end solutions, including software development and ERP integration, with cross-functional teams.
+                    </p>
+                    <p className="text-white font-extralight">
+                        - Implemented cloud adoption, cybersecurity, and data analytics solutions for clients.
+                    </p>
+                    </VerticalTimelineElement>
+
+
+                    <VerticalTimelineElement
+                    className="vertical-timeline-element--work"
+                    contentStyle={{
+                        background: "rgb(16, 16, 16)",
+                        color: "#fff",
+                        border: "2px solid white", // ✅ white border around the box
+                        borderRadius: "10px",       // optional: rounded corners
+                        padding: "20px"             // optional: spacing inside the box
+                    }}
+                    contentArrowStyle={{ borderRight: "7px solid rgb(86, 86, 86)" }}
+                    date="Jan 2024 - Aug 2024"
+                    iconStyle={{
+                        background: "white",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center"
+                    }}
+                    icon={
+                        <img
+                        src={amazonLogo}
+                        alt="amazonLogo"
+                        style={{
+                            width: "100%",
+                            height: "100%",
+                            borderRadius: "50%"
+                        }}
+                        />
+                    }
+                    >
+                    <h3 className="vertical-timeline-element-title text-2xl text-white ">Product/Project Manager Internship</h3>
+                    <h4 className="vertical-timeline-element-subtitle text-white font-semibold">Amazon</h4>
+                    <p className="text-white font-extralight">
+                        - Enhanced the performance of the Amazon locker network, achieving an estimated 10% increase in efficiency and estimated revenue savings of over $100,000 annually.
+                    </p>
+                    <p className="text-white font-extralight">
+                        - Refined a Machine Learning Model, providing insights in regional differences in internal metrics, and package volume performance, with findings presented to senior management to further push projects.
+                    </p>
+                    </VerticalTimelineElement>
+
+
+                    <VerticalTimelineElement
+                    className="vertical-timeline-element--work"
+                    contentStyle={{
+                        background: "rgb(16, 16, 16)",
+                        color: "#fff",
+                        border: "2px solid white", // ✅ white border around the box
+                        borderRadius: "10px",       // optional: rounded corners
+                        padding: "20px"             // optional: spacing inside the box
+                    }}
+                    contentArrowStyle={{ borderRight: "7px solid rgb(86, 86, 86)" }}
+                    date="Jul 2023 - Aug 2023"
+                    iconStyle={{
+                        background: "white",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center"
+                    }}
+                    icon={
+                        <img
+                        src={microsoftLogo}
+                        alt="microsoftLogo"
+                        style={{
+                            width: "70%",
+                            height: "70%",
+                        }}
+                        />
+                    }
+                    >
+                    <h3 className="vertical-timeline-element-title text-2xl text-white ">Technology Internship</h3>
+                    <h4 className="vertical-timeline-element-subtitle text-white font-semibold">Microsoft</h4>
+                    <p className="text-white font-extralight">
+                        - Engineered a feature-rich app demo using React Native Expo, which boosted prospective leadership interest by 18%.
+                    </p>
+                    <p className="text-white font-extralight">
+                        - Maintained extensive knowledge base in AI and software engineering by regularly attending workshops, webinars, and industry conferences.
+                    </p>
+                    </VerticalTimelineElement>
+
+
+                    <VerticalTimelineElement
+                    className="vertical-timeline-element--work"
+                    contentStyle={{
+                        background: "rgb(16, 16, 16)",
+                        color: "#fff",
+                        border: "2px solid white", // ✅ white border around the box
+                        borderRadius: "10px",       // optional: rounded corners
+                        padding: "20px"             // optional: spacing inside the box
+                    }}
+                    contentArrowStyle={{ borderRight: "7px solid rgb(86, 86, 86)" }}
+                    date="Jun 2023 - Jul 2023"
+                    iconStyle={{
+                        background: "white",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center"
+                    }}
+                    icon={
+                        <img
+                        src={GTLogo}
+                        alt="GTLogo"
+                        style={{
+                            width: "85%",
+                            height: "85%",
+                            borderRadius: "50%"
+                        }}
+                        />
+                    }
+                    >
+                    <h3 className="vertical-timeline-element-title text-2xl text-white ">Technology Risk Consultant Internship</h3>
+                    <h4 className="vertical-timeline-element-subtitle text-white font-semibold">Grant Thornton</h4>
+                    <p className="text-white font-extralight">
+                        - Enhanced client communication by providing clear and concise code review feedback, leading to a 10% increase in client satisfaction with our services.
+                    </p>
+                    <p className="text-white font-extralight">
+                        - Collaborated with cross-functional teams to identify and resolve control weaknesses, working closely with various departments to conduct thorough assessments and implement effective solutions.
+                    </p>
+                    </VerticalTimelineElement>
+
+                    
+                    <VerticalTimelineElement
+                    className="vertical-timeline-element--work"
+                    contentStyle={{
+                        background: "rgb(16, 16, 16)",
+                        color: "#fff",
+                        border: "2px solid white", // ✅ white border around the box
+                        borderRadius: "10px",       // optional: rounded corners
+                        padding: "20px"             // optional: spacing inside the box
+                    }}
+                    contentArrowStyle={{ borderRight: "7px solid rgb(86, 86, 86)" }}
+                    date="Oct 2023 - Dec 2023"
+                    iconStyle={{
+                        background: "white",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center"
+                    }}
+                    icon={
+                        <img
+                        src={QueenMaryUniversityLogo}
+                        alt="QueenMaryUniversityLogo"
+                        style={{
+                            width: "85%",
+                            height: "85%",
+                            borderRadius: "50%"
+                        }}
+                        />
+                    }
+                    >
+                    <h3 className="vertical-timeline-element-title text-2xl text-white ">Teaching Assistant</h3>
+                    <h4 className="vertical-timeline-element-subtitle text-white font-semibold">Queen Mary University London</h4>
+                    <p className="text-white font-extralight">
+                        - Developed and implemented engaging lesson plans that improved student performance in coursework 10%.
+                    </p>
+                    <p className="text-white font-extralight">
+                        - Used technology to supplement traditional teaching methods, resulting in a 5% increase in student engagement.
+                    </p>
+                    </VerticalTimelineElement>
+
+
+                    <VerticalTimelineElement
+                    className="vertical-timeline-element--work"
+                    contentStyle={{
+                        background: "rgb(16, 16, 16)",
+                        color: "#fff",
+                        border: "2px solid white", // ✅ white border around the box
+                        borderRadius: "10px",       // optional: rounded corners
+                        padding: "20px"             // optional: spacing inside the box
+                    }}
+                    contentArrowStyle={{ borderRight: "7px solid rgb(86, 86, 86)" }}
+                    date="Feb 2023 - Aug 2024"
+                    iconStyle={{
+                        background: "white",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center"
+                    }}
+                    icon={
+                        <img
+                        src={QueenMaryUniversityLogo}
+                        alt="QueenMaryUniversityLogo"
+                        style={{
+                            width: "85%",
+                            height: "85%",
+                            borderRadius: "50%"
+                        }}
+                        />
+                    }
+                    >
+                    <h3 className="vertical-timeline-element-title text-2xl text-white ">Student Ambassador</h3>
+                    <h4 className="vertical-timeline-element-subtitle text-white font-semibold">Queen Mary University London</h4>
+                    <p className="text-white font-extralight">
+                        - Organised a campus tour program that provided prospective students with a comprehensive overview of the university and increased prospective student attendance by 6%.
+                    </p>
+                    <p className="text-white font-extralight">
+                        - Represented the university at various outreach events and recruitment drives, resulting in a 4% increase in applications from prospective students.
+                    </p>
+                    </VerticalTimelineElement>
+
+
+
+
+
+
+                    
+
+                </VerticalTimeline>
                 </div>
             </div>
+
+
+            
         </section>
 
-        <section id="projects" className="my-60 snap-start h-screen py-60 no-scrollbar mb-32 mt-20 ">
+        <section id="projects" className="my-60 snap-start min-h-screen py-60 no-scrollbar mb-32 mt-20 ">
             <div className='snap-y snap-mandatory overflow-y-scroll h-screen scroll-smooth no-scrollbar'>
                 <p className="text-center">Browse My Recent</p>
                 <h1 className="text-6xl font-bold text-center mb-10">Projects</h1>
@@ -404,6 +715,34 @@ export default Main
                 </div>
                 </div>
                 */}
+
+
+
+                {/**
+                <div className="container flex flex-col items-center justify-center gap-11 mx-auto bg-neutral-950 w-full">
+                    <div className="flex flex-wrap justify-center gap-3">
+                    {Work_Experiences.map((Work_Experiences, index) => (
+                        <div className="border-2 rounded-3xl p-3 w-96 h-70">
+                            <p className="text-center font-bold mb-3">{Work_Experiences.job_title}</p>
+                            <div className='flex space-x-3 grid-rows-2  justify-center'>
+                                <img src={Work_Experiences.logo} height={40} width={40}/>
+                                <p className="text-center mt-2">{Work_Experiences.company}</p>
+                            </div>
+                                <p className='text-center font-thin mt-3 antialiased'>{Work_Experiences.duration}</p>
+                            <div>
+                            {Work_Experiences.description.map((text, textIndex) => (
+                                <div key={textIndex}>
+                                    <ol className=' list-disc pl-5'>
+                                        <li className='mt-4'>{text}</li>
+                                    </ol>
+                                </div>
+                            ))}
+                            </div>
+                        </div>
+                    ))}
+                </div>
+                </div>
+                 */}
 
 
 
