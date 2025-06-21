@@ -265,7 +265,7 @@ const Main = () => {
                 <p className=" text-center">Get To Know Me</p>
                 <h1 className="text-6xl font-bold text-center mb-12">About Me</h1>
                 <div className='flex flex-wrap gap-16 justify-center items-center mx-auto'>
-                    <div className={`flex ${isMobile ? 'flex-cols-2 gap-1' : 'flex-wrap flex-cols-3 gap-16'} justify-center items-center mb-12`}>
+                    <div className={`flex ${isMobile ? 'flex-cols-2 gap-1' : 'flex-wrap flex-cols-2 gap-16'} justify-center items-center mb-12`}>
                             <motion.button
                                 onClick={() => setShowEducation(!showEducation)}
                                 whileTap={{ scale: 0.95 }} whileHover={{ scale: 1.1 }} 
