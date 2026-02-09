@@ -1,0 +1,37 @@
+.root{
+    font-family:  "Montserrat Variable ", sans-serif;
+}
+
+.homepage_section1{
+    background-color: #060010;
+    color: white;
+    padding: 80px;
+}
+
+.homepage_section1_layout{
+    display: grid;
+    flex-direction: row;
+    margin-top: 70px;
+
+}
+
+.text_header{
+    margin-top: 30px;
+}
+
+.roles_header{
+    font-size: 25px;
+    color: white;
+    font-weight: 500;
+
+}
+
+.my_name_header{
+    font-size: 70px;
+    color: white;
+    font-weight: 700;
+}
+
+.moving_cards{
+    height: 400px;
+}

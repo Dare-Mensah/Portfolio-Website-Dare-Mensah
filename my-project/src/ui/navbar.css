@@ -1,0 +1,16 @@
+.nav_parent_div {
+    position: fixed;
+    top: 0;
+    background-color: #060010;
+    min-height: 70px;
+    width: 100%;
+    border-bottom: 1px solid #221a31;
+    color: white
+}
+
+.nav_child_div {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: #060010;
+}
+

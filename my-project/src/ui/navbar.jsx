@@ -1,11 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { Link as ScrollLink } from 'react-scroll';
+import '../ui/navbar.css'
 
 const Navbar = () => {
     return (
-      <div className='fixed top-0 left-0 w-full flex py-4 px-4 sm:px-5 bg-neutral-950 font-[sans-serif] min-h-[70px] tracking-wide z-50 stroke-black mb-20 text-white'>
-        <div className="py-4 bg-neutral-950 w-full stroke-black">
+      <div className='nav_parent_div'>
+        <div className="nav_child_div">
           <div className="flex justify-between items-center px-8">
             <div>
               <p className="text-3xl font-semibold">DM</p>
