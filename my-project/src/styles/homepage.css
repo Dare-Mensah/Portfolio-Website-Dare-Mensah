@@ -3,20 +3,27 @@
 }
 
 .homepage_section1{
-    background-color: #060010;
+    background-color: black;
     color: white;
     padding: 80px;
+    position: relative;  
+    overflow: hidden;
 }
 
 .homepage_section1_layout{
-    display: grid;
+    display: flex;
     flex-direction: row;
-    margin-top: 70px;
-
+    overflow: hidden;
+    width: 100%;
+    justify-content: center;
+    padding-top: 100px;
 }
 
 .text_header{
     margin-top: 30px;
+    width: 50%;
+    align-items: flex-start;
+    text-align: left;
 }
 
 .roles_header{
@@ -34,4 +41,38 @@
 
 .moving_cards{
     height: 400px;
+    height: 400px;
+    position: relative;
+    width: 50%;
+}
+
+.card_title{
+    padding: 20px;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.card_image{
+    border-radius: 20px;
+    width: 300px;
+    height: 300px;
+}
+
+.card_description{
+    padding: 20px;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.content_above {
+    z-index: 999;
+    position: relative;
+}
+
+.particles_bg{
+      position: absolute;
+  inset: 0;                 /* top:0 right:0 bottom:0 left:0 */
+  z-index: 0;
+  pointer-events: none; 
 }

@@ -5,8 +5,8 @@ import '../ui/navbar.css'
 
 const Navbar = () => {
     return (
-      <div className='nav_parent_div'>
-        <div className="nav_child_div">
+      <div className='fixed top-0 left-0 w-full flex  px-4 sm:px-5 bg-neutral-950 font-[sans-serif] min-h-[70px] tracking-wide z-50 stroke-black  text-white'>
+        <div className="py-4 bg-neutral-950 w-full stroke-black">
           <div className="flex justify-between items-center px-8">
             <div>
               <p className="text-3xl font-semibold">DM</p>

@@ -1,0 +1,6 @@
+import ClimateSenseImage from './assets/ClimateSenseImage.png'
+//import ClimateSenseHomepageTablet from '../../assets/ClimateSenseHomepageTablet.jpg'
+//import ClimateSenseLoginScreen from '../../assets/ClimateSenseLoginScreen.jpg'
+import FitnessAppImage from'./assets/FitnesAppImage2.png'
+//import FDMWellbeingHomepageTwo from'../../assets/FDMWellbeingHomepageTwo.jpg'
+import Spotify from './assets/SpotifyAnalysisImage.png'
