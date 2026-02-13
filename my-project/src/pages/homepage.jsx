@@ -32,6 +32,7 @@ import amazonLogo from '../assets/Amazon-Logo-07.jpg'
 import microsoftLogo from '../assets/microsoftLogo.png'
 import reality_ai_labs_logo from '../assets/reality_ai_labs_logo.jpg'
 import QueenMaryUniversityLogo from '../assets/Queen-Mary-UniversityLogo.png'
+import PremierInnLogo from '../assets/pi.png'
 
 const homepage = () => {
   const Projects = [
@@ -75,11 +76,25 @@ const homepage = () => {
 
   const Work_Experiences = [
     {
+      company: 'Whitbread (Premier Inn)',
+      job_title: 'Software Engineer',
+      description: ['Managed weekly country-level volume planning for multiple European regions, ensuring alignment across Customer Fulfilment, Surface Transportation, and Global Transportation Services. ', 'Developed and maintained complex data queries, visualizations, and models for reporting and ad-hoc analysis using Excel, Quick Sight, ETL Jobs, AWS (S3 buckets, Redshift), and SQL. '],
+      logo: PremierInnLogo,
+      duration: 'Feb 2026 - Present'
+    },
+    {
+      company: 'Whitbread (Premier Inn)',
+      job_title: 'AB Testing (Experimentation) Engineer',
+      description: ['Managed weekly country-level volume planning for multiple European regions, ensuring alignment across Customer Fulfilment, Surface Transportation, and Global Transportation Services. ', 'Developed and maintained complex data queries, visualizations, and models for reporting and ad-hoc analysis using Excel, Quick Sight, ETL Jobs, AWS (S3 buckets, Redshift), and SQL. '],
+      logo: PremierInnLogo,
+      duration: 'Sep 2026 -  Jan 2026'
+    },
+    {
       company: 'Amazon',
       job_title: 'Data Analyst',
       description: ['Managed weekly country-level volume planning for multiple European regions, ensuring alignment across Customer Fulfilment, Surface Transportation, and Global Transportation Services. ', 'Developed and maintained complex data queries, visualizations, and models for reporting and ad-hoc analysis using Excel, Quick Sight, ETL Jobs, AWS (S3 buckets, Redshift), and SQL. '],
       logo: amazonLogo,
-      duration: 'Feb 2025 - Present'
+      duration: 'Feb 2025 - June 2025'
     },
     {
       company: 'Reality AI Labs',
