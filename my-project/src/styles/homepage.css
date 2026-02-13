@@ -1,11 +1,16 @@
-.root{
+#root{
     font-family:  "Montserrat Variable ", sans-serif;
+    background-color: black;
+}
+
+html, body{
+    background-color: black;
 }
 
 .homepage_section1{
     background-color: black;
     color: white;
-    padding: 80px;
+    padding: 60px;
     position: relative;  
     overflow: hidden;
 }
@@ -26,17 +31,64 @@
     text-align: left;
 }
 
+.my_name_header{
+    font-size: 70px;
+    color: white;
+    font-weight: 700;
+}
+
+@media screen and (min-width: 1400px){
+    .homepage_section1_layout{
+        max-width: 1500px
+    }
+
+    .content_above{
+        max-width: 1400px
+    }
+
+    .homepage_section1{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+        .card {
+        width: 400px;
+        height: 300px
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .homepage_section1_layout{
+        max-width: 890px;
+        display: block;
+    }
+
+    .homepage_section1{
+        padding: 20px;
+    }
+
+    .text_header{
+        width: 100%;
+    }
+
+    .my_name_header{
+        font-size: 60px;
+    }
+
+      .moving_cards {
+    display: none;
+  }
+
+}
+
+
 .roles_header{
     font-size: 25px;
     color: white;
     font-weight: 500;
 
-}
-
-.my_name_header{
-    font-size: 70px;
-    color: white;
-    font-weight: 700;
 }
 
 .moving_cards{
@@ -76,3 +128,18 @@
   z-index: 0;
   pointer-events: none; 
 }
+
+.vertical-timeline::before {
+  /* this is the vertical line */
+
+  background: rgb(255, 253, 253) !important;
+}
+
+
+.empty {
+  height: 600px;
+  border: 1px solid red;
+}
+
+
+

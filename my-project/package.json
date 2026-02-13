@@ -28,7 +28,8 @@
     "react-scroll": "^1.9.0",
     "react-type-animation": "^3.2.0",
     "react-vertical-timeline-component": "^3.5.3",
-    "swiper": "^11.2.8"
+    "swiper": "^11.2.8",
+    "three": "^0.182.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.15.0",

@@ -1,16 +1,38 @@
 .nav_parent_div {
     position: fixed;
     top: 0;
-    background-color: #060010;
-    min-height: 70px;
+    left: 0;
     width: 100%;
+    min-height: 70px;
+
+    display: flex;
+
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    background-color: black;  
     border-bottom: 1px solid #221a31;
-    color: white
+    color: white;
+    font-family: sans-serif;
+    letter-spacing: 0.025em;
+
+    z-index: 9999;
 }
+
+@media (min-width: 640px) {
+  .nav_parent_div {
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+      background-color: black;  
+  }
+}
+
+
 
 .nav_child_div {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    background-color: #060010;
+    background-color: black;
+    width: 100%
 }
 
