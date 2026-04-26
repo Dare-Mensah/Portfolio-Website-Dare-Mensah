@@ -22,7 +22,7 @@ import {
   Plane as w
 } from 'three';
 import { RoomEnvironment as z } from 'three/examples/jsm/environments/RoomEnvironment.js';
-
+import './styles/ballpit.css';
 class x {
   #e;
   canvas;

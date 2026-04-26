@@ -1,0 +1,23 @@
+.pp_layout {
+    flex-direction: row;
+    overflow: hidden;
+    width: 100%;
+    justify-content: center;
+    padding-top: 70px;
+}
+
+.pp_section {
+    marginBottom: '30px';
+    minHeight: '100vh';
+    display: 'flex';
+    flexDirection: 'column';
+    justifyContent: 'flex-start';
+    alignItems: 'center';
+    paddingTop: '200px';
+
+    background-color: black;
+    color: white;
+    padding: 60px;
+    position: relative;  
+    overflow: hidden;
+}
